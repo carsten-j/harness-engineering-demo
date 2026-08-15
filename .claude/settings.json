@@ -1,0 +1,30 @@
+{
+  "permissions": {
+    "deny": [
+      "Bash(rm -rf *)",
+      "Bash(git push --force*)",
+      "Bash(DATABASE_URL=*prod* *)",
+      "Bash(psql *)"
+    ],
+    "allow": [
+      "Bash(make test*)",
+      "Bash(make check*)",
+      "Bash(make migrate*)",
+      "Bash(uv run pytest*)",
+      "Bash(uv run ruff*)"
+    ]
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"$CLAUDE_PROJECT_DIR/.claude/hooks/lint.py\""
+          }
+        ]
+      }
+    ]
+  }
+}

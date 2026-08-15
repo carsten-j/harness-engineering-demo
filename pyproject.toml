@@ -1,0 +1,24 @@
+[project]
+name = "invoice-demo"
+version = "0.1.0"
+description = "Demo FastAPI invoice service for the harness-engineering webinar"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi>=0.115",
+    "httpx>=0.27",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8",
+    "ruff>=0.6",
+]
+
+[tool.ruff.lint]
+# Classic default set: pyflakes + core pycodestyle. Deliberately narrow —
+# the planted demo bugs are logic bugs and must stay invisible to lint.
+select = ["E4", "E7", "E9", "F"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
