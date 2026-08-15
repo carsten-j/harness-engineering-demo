@@ -1,8 +1,6 @@
 # invoice-demo — harness engineering, live
 
-Small FastAPI invoice service hosting three live demos for the
-harness-engineering webinar. Each demo shows a slide's configuration
-working in a real Claude Code session.
+Small FastAPI invoice service hosting three live demos for the harness-engineering webinar. Each demo shows a slide's configuration working in a real Claude Code session.
 
 ## Setup (once)
 

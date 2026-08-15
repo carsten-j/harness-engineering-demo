@@ -10,6 +10,7 @@ dependencies = [
 
 [dependency-groups]
 dev = [
+    "httpx2>=2.10.0",
     "pytest>=8",
     "ruff>=0.6",
 ]
