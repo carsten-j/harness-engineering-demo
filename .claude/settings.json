@@ -15,6 +15,17 @@
     ]
   },
   "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Skill",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "jq -r '[(now|todate), .session_id, .tool_input.skill, (.tool_input.args // \"\")] | @tsv' >> \"$CLAUDE_PROJECT_DIR/.claude/skill-usage.log\" 2>/dev/null || true"
+          }
+        ]
+      }
+    ],
     "PostToolUse": [
       {
         "matcher": "Edit|Write",
