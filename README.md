@@ -25,7 +25,7 @@ Code session rather than described on a slide:
 | Demo | Topic | What the audience sees |
 |---|---|---|
 | A | Sensors | A lint hook feeds its own error back into the agent, which corrects itself unprompted |
-| B | Rails | A CLAUDE.md "wish" vs. a permission deny list — only one of them actually stops the agent |
+| B | Rails | A CLAUDE.md "wish" vs. a deny list, then a skill that installs its own guard hook at runtime — the agent is blocked mid-edit and reroutes to a migration file |
 | C | Workflow | A workflow fans out finder agents per module, then adversarially refutes each finding |
 
 The application code is not the point. It contains planted bugs and

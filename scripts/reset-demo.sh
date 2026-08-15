@@ -8,10 +8,13 @@ cd "$(git -C "$(dirname "$0")" rev-parse --show-toplevel)"
 echo "==> discarding tracked changes"
 git checkout -- .
 
-echo "==> removing untracked files in api web jobs tests"
-git clean -fd api web jobs tests
+echo "==> removing untracked files in api web jobs tests migrations"
+git clean -fd api web jobs tests migrations
 
 echo "==> removing invoices.sqlite3"
 rm -f invoices.sqlite3
+
+echo "==> removing .claude/skill-usage.log"
+rm -f .claude/skill-usage.log
 
 echo "==> reset complete"

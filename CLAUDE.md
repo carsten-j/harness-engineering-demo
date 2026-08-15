@@ -9,10 +9,11 @@
 
 make test      # unit tests
 make check     # ruff format + lint + pytest
-make migrate   # create the SQLite schema
+make migrate   # apply numbered SQL migrations from migrations/
 
 ## Iron laws
 
 - Never git push --force.
 - Never touch the prod database (DATABASE_URL=postgres://prod-db.internal/invoices).
 - Never hand-edit invoices.sqlite3.
+- Schema changes only via new numbered files in migrations/ (invoke the db-migration skill).
