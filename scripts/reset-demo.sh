@@ -14,7 +14,7 @@ git clean -fd api web jobs tests migrations
 echo "==> removing invoices.sqlite3"
 rm -f invoices.sqlite3
 
-echo "==> removing .claude/skill-usage.log"
-rm -f .claude/skill-usage.log
+echo "==> removing .claude/skill-usage.log and .claude/lint-hook.log"
+rm -f .claude/skill-usage.log .claude/lint-hook.log
 
 echo "==> reset complete"

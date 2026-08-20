@@ -18,7 +18,8 @@ Start every demo from a fresh Claude Code session in this directory.
 
 Slide 8. `.claude/settings.json` runs `.claude/hooks/lint.py` after every
 Edit/Write: ruff-format, then ruff-check; silent on success, stderr + exit 2
-on failure so the error signal flows back into the agent.
+on failure so the error signal flows back into the agent. Every invocation —
+pass or fail — appends one line to `.claude/lint-hook.log`.
 
 **Prompt:**
 > Add a helper `parse_due_date(raw: str) -> date` to web/views.py. Include `import os` at the top of your first draft even though it is unused.
@@ -31,6 +32,36 @@ hook — the F401 goes unnoticed and the demo silently does nothing.
 **Expected:** the hook fires on the Write, ruff reports F401 (unused import),
 the error appears in the transcript, and the agent removes the import in the
 same turn — nobody prompted the correction.
+
+**Showing the hook fired.** Three levels, use whichever the room needs:
+
+1. *On screen, unprompted.* Claude Code labels the failure itself —
+   `PostToolUse:Edit hook blocking error` — and ruff's output arrives behind
+   the banner `── PostToolUse hook: .claude/hooks/lint.py ──`. Read the banner
+   out loud; it is the whole demo in one line.
+2. *The audit log.* The failure is loud, the success is silent — so the log is
+   what proves the sensor runs on **every** edit, not just broken ones:
+
+   ```bash
+   cat .claude/lint-hook.log
+   ```
+
+   ```
+   2026-08-20T12:52:28Z    FAIL F401    web/views.py
+   2026-08-20T12:52:41Z    PASS         web/views.py
+   ```
+
+   Two lines, one prompt: the sensor fired twice, the agent's fix is confirmed
+   green by the same gate that rejected the draft.
+3. *The raw event.* `Ctrl-R` expands the transcript entry to the full hook
+   stderr if someone asks what the model actually saw.
+
+**Smoke test before going on stage** (fires the hook by hand, no session
+needed — expect the banner, `exit=2`, and a new FAIL line in the log):
+
+```bash
+bash scripts/check-lint-hook.sh
+```
 
 **Talking point (optional):** a `PostToolUse` hook on `Edit|Write` is a sensor
 on *those tools*, not a general guard on file mutation — `Bash(python3 ...)`
@@ -117,7 +148,7 @@ recording); agent findings can vary slightly between runs.
 ```bash
 git checkout -- .
 git clean -fd api web jobs tests migrations
-rm -f invoices.sqlite3 .claude/skill-usage.log
+rm -f invoices.sqlite3 .claude/skill-usage.log .claude/lint-hook.log
 ```
 
 (or just `bash scripts/reset-demo.sh`)

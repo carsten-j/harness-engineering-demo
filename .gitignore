@@ -4,3 +4,4 @@ __pycache__/
 .pytest_cache/
 .ruff_cache/
 .claude/skill-usage.log
+.claude/lint-hook.log
