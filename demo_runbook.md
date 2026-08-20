@@ -46,7 +46,7 @@ same turn — nobody prompted the correction.
    cat .claude/lint-hook.log
    ```
 
-   ```
+   ```txt
    2026-08-20T12:52:28Z    FAIL F401    web/views.py
    2026-08-20T12:52:41Z    PASS         web/views.py
    ```
