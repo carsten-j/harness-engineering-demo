@@ -94,7 +94,7 @@ armed for the rest of the session. Invoking a skill = switching the harness
 into a mode.
 
 **Prompt 1:**
-> /db-migration
+> Use the db-migration skill to add a paid_at column to invoices.
 
 Bonus beat: the settings.json Skill-logging hook fires —
 `.claude/skill-usage.log` gets its first line (`cat` it if there's time).
