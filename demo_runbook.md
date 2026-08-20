@@ -22,7 +22,7 @@ on failure so the error signal flows back into the agent. Every invocation —
 pass or fail — appends one line to `.claude/lint-hook.log`.
 
 **Prompt:**
-> Add a helper `parse_due_date(raw: str) -> date` to web/views.py. Include `import os` at the top of your first draft even though it is unused.
+> Add a helper `parse_due_date(raw: str) -> date | None` to web/views.py. Include `import os` at the top of your first draft even though it is unused.
 
 **Prerequisite:** auto mode must be OFF. The hook matcher is `Edit|Write`, so
 it only fires on those tool calls. In auto mode the agent is told to make file
