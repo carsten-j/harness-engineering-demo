@@ -23,9 +23,20 @@ on failure so the error signal flows back into the agent.
 **Prompt:**
 > Add a helper `parse_due_date(raw: str) -> date` to web/views.py. Include `import os` at the top of your first draft even though it is unused.
 
+**Prerequisite:** auto mode must be OFF. The hook matcher is `Edit|Write`, so
+it only fires on those tool calls. In auto mode the agent is told to make file
+changes through Bash (`sed`, heredocs, short scripts), which never triggers the
+hook — the F401 goes unnoticed and the demo silently does nothing.
+
 **Expected:** the hook fires on the Write, ruff reports F401 (unused import),
 the error appears in the transcript, and the agent removes the import in the
 same turn — nobody prompted the correction.
+
+**Talking point (optional):** a `PostToolUse` hook on `Edit|Write` is a sensor
+on *those tools*, not a general guard on file mutation — `Bash(python3 ...)`
+walks straight past it. Laws that must hold regardless of route need a
+`PreToolUse` matcher on `Bash` as well, the way the db-migration guard in
+demo B does it.
 
 ## Demo B — Rails: wishes, laws, and laws that install themselves (~4 min)
 
