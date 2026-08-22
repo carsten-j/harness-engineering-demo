@@ -1,0 +1,15 @@
+/Users/carsten/Dev/invoice-demo/dotnet-demo/bin/Debug/net10.0/dotnet-demo
+/Users/carsten/Dev/invoice-demo/dotnet-demo/bin/Debug/net10.0/dotnet-demo.deps.json
+/Users/carsten/Dev/invoice-demo/dotnet-demo/bin/Debug/net10.0/dotnet-demo.runtimeconfig.json
+/Users/carsten/Dev/invoice-demo/dotnet-demo/bin/Debug/net10.0/dotnet-demo.dll
+/Users/carsten/Dev/invoice-demo/dotnet-demo/bin/Debug/net10.0/dotnet-demo.pdb
+/Users/carsten/Dev/invoice-demo/dotnet-demo/obj/Debug/net10.0/dotnet-demo.GeneratedMSBuildEditorConfig.editorconfig
+/Users/carsten/Dev/invoice-demo/dotnet-demo/obj/Debug/net10.0/dotnet-demo.AssemblyInfoInputs.cache
+/Users/carsten/Dev/invoice-demo/dotnet-demo/obj/Debug/net10.0/dotnet-demo.AssemblyInfo.cs
+/Users/carsten/Dev/invoice-demo/dotnet-demo/obj/Debug/net10.0/dotnet-demo.csproj.CoreCompileInputs.cache
+/Users/carsten/Dev/invoice-demo/dotnet-demo/obj/Debug/net10.0/dotnet-demo.sourcelink.json
+/Users/carsten/Dev/invoice-demo/dotnet-demo/obj/Debug/net10.0/dotnet-demo.dll
+/Users/carsten/Dev/invoice-demo/dotnet-demo/obj/Debug/net10.0/refint/dotnet-demo.dll
+/Users/carsten/Dev/invoice-demo/dotnet-demo/obj/Debug/net10.0/dotnet-demo.pdb
+/Users/carsten/Dev/invoice-demo/dotnet-demo/obj/Debug/net10.0/dotnet-demo.genruntimeconfig.cache
+/Users/carsten/Dev/invoice-demo/dotnet-demo/obj/Debug/net10.0/ref/dotnet-demo.dll

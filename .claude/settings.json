@@ -24,6 +24,16 @@
             "command": "jq -r '[(now|todate), .session_id, .tool_input.skill, (.tool_input.args // \"\")] | @tsv' >> \"$CLAUDE_PROJECT_DIR/.claude/skill-usage.log\" 2>/dev/null || true"
           }
         ]
+      },
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$CLAUDE_PROJECT_DIR/.claude/hooks/build-throttle.sh",
+            "timeout": 10
+          }
+        ]
       }
     ],
     "PostToolUse": [
