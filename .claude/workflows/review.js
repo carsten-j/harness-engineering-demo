@@ -3,7 +3,7 @@ export const meta = {
   description: 'Fan out bug finders per module, adversarially refute each finding',
   phases: [
     { title: 'Find', detail: 'one finder agent per module' },
-    { title: 'Refute', detail: 'one adversarial verifier per finding' },
+    { title: 'Refute', detail: 'one adversarial verifier per finding', model: 'haiku' },
   ],
 }
 
@@ -56,7 +56,7 @@ const judged = await parallel(bugs.map(b => () =>
     (b.line ? `:${b.line}` : '') +
     `: "${b.desc}". Read the file, including docstrings and comments. ` +
     'If the behavior is intentional or actually correct, refute the report.',
-    { label: `refute:${b.file}`, phase: 'Refute', schema: VERDICT },
+    { label: `refute:${b.file}`, phase: 'Refute', schema: VERDICT, model: 'haiku' },
   ).then(v => v && { ...b, ...v })))
 
 const confirmed = judged.filter(Boolean).filter(j => j.real)

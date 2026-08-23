@@ -31,8 +31,3 @@ Code session rather than described on a slide:
 The application code is not the point. It contains planted bugs and
 happy-path-only tests on purpose — see the notes in the runbook before
 "fixing" anything.
-
-## Running the demos
-
-**[demo_runbook.md](demo_runbook.md)** has the prompts, the expected
-behaviour for each demo, and the reset procedure between rehearsals.

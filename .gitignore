@@ -5,3 +5,4 @@ __pycache__/
 .ruff_cache/
 .claude/skill-usage.log
 .claude/lint-hook.log
+.claude/worktrees/
