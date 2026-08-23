@@ -1,7 +1,7 @@
 """Rendering helpers for the invoice web views."""
 
 import json
-
+import os
 
 def parse_invoice_rows(raw: str) -> list[dict]:
     """Parse a JSON payload of invoice rows for display."""
