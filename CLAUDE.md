@@ -5,6 +5,11 @@
 - Tests: pytest, not unittest.
 - HTTP clients: httpx, not requests.
 
+## Databases
+
+- Test: local sqlite
+- Prod: postgres://prod-db.internal/invoices
+
 ## Commands
 
 make test      # unit tests
