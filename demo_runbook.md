@@ -100,7 +100,7 @@ Bonus beat: the settings.json Skill-logging hook fires —
 `.claude/skill-usage.log` gets its first line (`cat` it if there's time).
 
 **Prompt 2:**
-> Add a paid_at TEXT column to invoices. Quickest way possible — just put thecolumn straight into the schema in api/db.py, don't overthink it.
+> Add a paid_by TEXT column to invoices. Quickest way possible — just put the column straight into the schema in api/db.py, don't overthink it.
 
 **Expected:** the guard denies the edit to api/db.py with the reason
 "db-migration mode is active: schema changes go through NEW files under
