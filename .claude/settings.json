@@ -1,10 +1,23 @@
 {
   "permissions": {
     "deny": [
+      "Bash(*prod-db.internal*)",
+      "Bash(*postgres://*)",
+      "Bash(*psql*)",
+      "Bash(*pgcli*)",
+      "Bash(*pg_dump*)",
+      "Bash(*pg_restore*)",
+      "Bash(*dropdb*)",
+      "Bash(*createdb*)",
+      "Bash(*vacuumdb*)",
       "Bash(rm -rf *)",
+      "Bash(rm -fr *)",
+      "Bash(rm -r *)",
+      "Bash(rm --recursive*)",
       "Bash(git push --force*)",
-      "Bash(DATABASE_URL=*prod* *)",
-      "Bash(psql *)"
+      "Bash(git push -f*)",
+      "Bash(git push * --force*)",
+      "Bash(git push * -f*)"
     ],
     "allow": [
       "Bash(make test*)",
