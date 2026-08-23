@@ -14,7 +14,9 @@ MIGRATION_NAME = re.compile(r"^\d{4}_[a-z0-9_]+\.sql$")
 
 
 def deny(reason: str) -> None:
-    print(
+    # The hook protocol is a JSON object on stdout, so print is the interface
+    # here, not debug output.
+    print(  # noqa: T201
         json.dumps(
             {
                 "hookSpecificOutput": {

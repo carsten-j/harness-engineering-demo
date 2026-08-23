@@ -1,15 +1,16 @@
 """Rendering helpers for the invoice web views."""
 
 import json
-import os
+
 
 def parse_invoice_rows(raw: str) -> list[dict]:
     """Parse a JSON payload of invoice rows for display."""
     try:
         rows = json.loads(raw)
-        return [
+        parsed = [
             {"customer": r["customer"], "total": r["total_cents"] / 100} for r in rows
         ]
+        return parsed
     except Exception:
         return []
 

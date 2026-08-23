@@ -39,12 +39,9 @@
     ],
     "PostToolUse": [
       {
-        "matcher": "Edit|Write",
+        "matcher": "Write|Edit",
         "hooks": [
-          {
-            "type": "command",
-            "command": "python3 \"$CLAUDE_PROJECT_DIR/.claude/hooks/lint.py\""
-          }
+          { "type": "command", "command": "uv run ruff check . >&2 || exit 2" }
         ]
       }
     ]

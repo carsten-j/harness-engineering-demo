@@ -1,11 +1,14 @@
 """SQLite schema management: apply numbered migrations from migrations/ in order."""
 
+import logging
 import sqlite3
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 DB_PATH = ROOT / "invoices.sqlite3"
 MIGRATIONS_DIR = ROOT / "migrations"
+
+logger = logging.getLogger(__name__)
 
 
 def migrate() -> None:
@@ -27,9 +30,10 @@ def migrate() -> None:
                 "INSERT INTO schema_migrations (filename) VALUES (?)", (path.name,)
             )
             conn.commit()
-            print(f"applied {path.name}")
-    print(f"schema ready at {DB_PATH}")
+            logger.info("applied %s", path.name)
+    logger.info("schema ready at %s", DB_PATH)
 
 
 if __name__ == "__main__":
+    logging.basicConfig(level=logging.INFO, format="%(message)s")
     migrate()

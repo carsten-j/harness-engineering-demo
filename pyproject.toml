@@ -6,6 +6,7 @@ requires-python = ">=3.11"
 dependencies = [
     "fastapi>=0.115",
     "httpx>=0.27",
+    "ruff>=0.16.3",
 ]
 
 [dependency-groups]
@@ -18,8 +19,11 @@ dev = [
 [tool.ruff.lint]
 # Classic default set: pyflakes + core pycodestyle. Deliberately narrow —
 # the planted demo bugs are logic bugs and must stay invisible to lint.
-select = ["E4", "E7", "E9", "F"]
+select = ["E4", "E7", "E9", "F", "T201"]
+
 
 [tool.pytest.ini_options]
 pythonpath = ["."]
 testpaths = ["tests"]
+
+
