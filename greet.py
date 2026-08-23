@@ -1,9 +1,14 @@
-import sys
+import argparse
 
 
-def greet(name: str) -> str:
-    return f"Hello, {name}!"
+def greet(name: str, shout: bool = False) -> str:
+    message = f"Hello, {name}!"
+    return message.upper() if shout else message
 
 
 if __name__ == "__main__":
-    print(greet(sys.argv[1] if len(sys.argv) > 1 else "world"))  # noqa: T201
+    parser = argparse.ArgumentParser()
+    parser.add_argument("name", nargs="?", default="world")
+    parser.add_argument("--shout", action="store_true", help="upper-case the output")
+    args = parser.parse_args()
+    print(greet(args.name, args.shout))  # noqa: T201
