@@ -1,8 +1,6 @@
 ---
 name: db-migration
-description: Safe schema-change mode for the invoice database. Use when adding,
-  removing, or altering columns/tables. Installs a guard that only permits new
-  numbered migration files.
+description: Safe schema-change mode for the invoice database. Use when user says migration,schema change, or anything that implies. Installs a guard that only permits new numbered migration files.
 hooks:
   PreToolUse:
     - matcher: "Edit|Write"
