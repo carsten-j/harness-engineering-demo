@@ -20,13 +20,7 @@ system rather than a pile of settings.
 
 A deliberately small FastAPI + SQLite invoice service, existing only so that
 three of those components can be demonstrated running for real in a Claude
-Code session rather than described on a slide:
-
-| Demo | Topic | What the audience sees |
-|---|---|---|
-| A | Sensors | A lint hook feeds its own error back into the agent, which corrects itself unprompted |
-| B | Rails | A CLAUDE.md "wish" vs. a deny list, then a skill that installs its own guard hook at runtime — the agent is blocked mid-edit and reroutes to a migration file |
-| C | Workflow | A workflow fans out finder agents per module, then adversarially refutes each finding |
+Code session rather than described on a slide.
 
 The application code is not the point. It contains planted bugs and
 happy-path-only tests on purpose — see the notes in the runbook before

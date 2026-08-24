@@ -43,7 +43,7 @@ const found = await parallel(DIRS.map(d => () =>
     `Read every Python file under ${d}/ in this repo and report genuine logic bugs ` +
     '(wrong results, silently swallowed failures). Ignore style issues. ' +
     'Report an empty list if the code is correct.',
-    { label: `find:${d}`, phase: 'Find', schema: BUGS },
+    { label: `find:${d}`, phase: 'Find', schema: BUGS, model: 'sonnet' },
   )))
 
 const bugs = found.filter(Boolean).flatMap(r => r.bugs)
